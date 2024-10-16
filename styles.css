@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #022563d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header h1 {
+    color: white;
+    font-size: 36px;
+    animation: slideIn 2s ease-out forwards;
+    position: absolute;
+    left: -100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2px 0; /* Daha da küçültmek için padding'i azalt */
+    background-color: #022563d8;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.footer-gif {
+        width: 100px; /* GIF'in genişliğini artır */
+        height: auto; /* Yüksekliği orantılı olarak ayarla */
+        position: relative;
+        top: 0px; left: 0px;
+}
+
+@keyframes slideIn {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    100% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #50677e;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 24.58px;
+    background: linear-gradient(90deg, #6a7272, #979c9ff6);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background: linear-gradient(90deg, #1aa488, #7f86a9);
+}
+
+.content {
+    width: 80%;
+    padding: 40px;
+    background-color: #ecf0f1;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.explosion {
+    position: fixed;
+    top: 50%; /* Dikey olarak ortala */
+    left: 50%; /* Yatay olarak ortala */
+    width: 250px; /* Patlama genişliği */
+    height: 250px; /* Patlama yüksekliği */
+    background: url('explosion.gif') no-repeat center center; /* Patlama görseli */
+    background-size: cover; /* Görseli kapsayacak şekilde ayarla */
+    transform: translate(-50%, -50%); /* Gerçekten ortalamak için */
+    opacity: 0; /* Başlangıçta görünmez olmalı */
+    pointer-events: none; /* Etkileşim olmaması için */
+    z-index: 9999; /* Diğer içeriklerin üzerinde görünmesi için */
+    animation: explode 1s forwards; /* Animasyonu uygula */
+}
+
+@keyframes explode {
+    0% {
+        opacity: 1; /* Başlangıçta görünür */
+        transform: translate(-50%, -50%) scale(1); /* Başlangıç boyutu */
+    }
+    100% {
+        opacity: 0; /* Bittiğinde görünmez ol */
+        transform: translate(-50%, -50%) scale(3); /* Son boyut */
+    }
+}
+

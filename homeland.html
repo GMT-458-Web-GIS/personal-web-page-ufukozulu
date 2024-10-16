@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homeland</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> 
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif; 
+        }
+    </style>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@6.15.1/ol.css" type="text/css">
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+        .info {
+            margin: 20px; 
+            font-size: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>HI, I'm UFUK</h1>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="hobbies.html">My Hobbies</a></li>
+                <li><a href="technologies.html">Technologies I Know</a></li>
+                <li><a href="homeland.html" class="active">My Homeland</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>My Homeland</h1>
+            <div class="info">
+                I was born in Çorum in 1999. Çorum is a city and province located in the Black Sea Region of Turkey. According to 2023 data, the population of Çorum is approximately 525,000 people. The city is known for its historical richness, particularly the remains of the Hittite civilization. Its economy is based on agriculture and animal husbandry. Çorum is also famous for its delicious İskilip dolması and roasted chickpeas (leblebi). With its natural beauty and cultural heritage, it attracts both domestic and foreign tourists.
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+    <script>
+        
+        var map = new ol.Map({
+            target: 'map', 
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM() 
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([34.968568, 40.554168]), 
+                zoom: 13 
+            })
+        });
+
+        
+        var iconCoordinates = ol.proj.fromLonLat([34.968568, 40.554168]); 
+
+        
+        var iconFeature = new ol.Feature({
+            geometry: new ol.geom.Point(iconCoordinates),
+        });
+
+        
+        var iconStyle = new ol.style.Style({
+            image: new ol.style.Icon({
+                anchor: [0.5, 1], 
+                src: 'home.png', 
+                scale: 0.125
+            })
+        });
+
+        
+        iconFeature.setStyle(iconStyle);
+
+        
+        var vectorSource = new ol.source.Vector({
+            features: [iconFeature]
+        });
+
+        var vectorLayer = new ol.layer.Vector({
+            source: vectorSource
+        });
+
+        
+        map.addLayer(vectorLayer);
+    </script>   
+</body>
+</html>

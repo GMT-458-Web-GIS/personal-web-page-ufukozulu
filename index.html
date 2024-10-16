@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> 
+    <style>
+        .header h1 {
+            font-family: 'Orbitron', sans-serif; 
+        }
+        .content h1 {
+            font-family: 'Orbitron', sans-serif; 
+        }
+        .content p {
+            font-size: 20px; 
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="explosion" id="explosion"></div>
+
+    <div class="header">
+        <h1>HI, I'm UFUK</h1>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="hobbies.html">My Hobbies</a></li>
+                <li><a href="technologies.html">Technologies I Know</a></li>
+                <li><a href="homeland.html">My Homeland</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Welcome to My Personal Website!</h1>
+            <p>Hello, welcome again to my personal web page for the web-based GIS course.</p>
+            <p>On this website, I aimed to create a simple web page that describes myself using HTML and CSS programming languages, along with integrating an OpenLayers dataset.</p>
+        </div>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            const explosion = document.getElementById('explosion');
+            explosion.style.opacity = '1'; 
+        };
+    </script>
+    
+    <footer>
+        <p>Ufuk Ozulu</p>
+        <p>ufukozulu99@gmail.com</p>
+        <p>© 2024 My Website</p>
+        <img src="nyancat.gif" alt="My GIF" class="footer-gif">
+    </footer>
+    
+</body>
+</html>
