@@ -1,1 +1,1 @@
-https://ufukozulu.github.io/
+https://gmt-458-web-gis.github.io/personal-web-page-ufukozulu/
