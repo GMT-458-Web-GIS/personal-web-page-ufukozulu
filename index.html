@@ -8,20 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> 
     <style>
         .header h1 {
-            font-family: 'Orbitron', sans-serif; 
+            font-family: 'Orbitron', sans-serif;
         }
         .content h1 {
-            font-family: 'Orbitron', sans-serif; 
+            font-family: 'Orbitron', sans-serif;
         }
         .content p {
-            font-size: 20px; 
-            margin-bottom: 20px; 
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        /* Fotoğrafı yuvarlak hale getirmek için stil */
+        .content img {
+            display: block;
+            margin: 20px auto;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%; /* Fotoğrafı yuvarlak yapar */
+            object-fit: cover; /* Fotoğrafın içeriğini kesmeden sığdırır */
         }
     </style>
 </head>
 <body>
-
-    <div class="explosion" id="explosion"></div>
 
     <div class="header">
         <h1>HI, I'm UFUK</h1>
@@ -41,15 +48,11 @@
             <h1>Welcome to My Personal Website!</h1>
             <p>Hello, welcome again to my personal web page for the web-based GIS course.</p>
             <p>On this website, I aimed to create a simple web page that describes myself using HTML and CSS programming languages, along with integrating an OpenLayers dataset.</p>
+            
+            <!-- Fotoğrafı eklediğimiz yer -->
+            <img src="me.jpg" alt="Profile Photo">
         </div>
     </div>
-    
-    <script>
-        window.onload = function() {
-            const explosion = document.getElementById('explosion');
-            explosion.style.opacity = '1'; 
-        };
-    </script>
     
     <footer>
         <p>Ufuk Ozulu</p>
